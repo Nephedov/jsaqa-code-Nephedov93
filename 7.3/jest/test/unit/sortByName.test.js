@@ -13,5 +13,11 @@ describe("Books names test suit", () => {
       "Волшебник изумрудного города",
       "Гарри Поттер",
     ]);
-  });
+  }),
+    it("First book name should be equal second book name", () => {
+      expect(sorting.sortByName(["Книга", "Книга"])).toEqual([
+        "Книга",
+        "Книга",
+      ]);
+    });
 });
