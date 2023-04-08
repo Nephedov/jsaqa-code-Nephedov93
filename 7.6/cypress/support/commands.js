@@ -11,6 +11,32 @@
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
+
+Cypress.Commands.add('login', (email, password) => {
+    cy.contains('Log in').click();
+
+    if(email) {
+        cy.get('#mail').type(email);
+    }
+
+    if(password) {
+        cy.get('#pass').type(password);
+    }
+
+    cy.contains('Submit').click();
+});
+
+Cypress.Commands.add('checkValidity', (selector, boolean) => {
+    if (selector && boolean == 'true' || boolean == 'false') {
+    cy.get(selector).then(element => element[0].checkValidity()).should(`be.${boolean}`);
+}});
+
+Cypress.Commands.add('validationMessage', (selector, text) => {
+    if(selector && text) {
+        cy.get(selector).then(element => element[0].validationMessage).should('contain', text);
+    }
+});
+
 //
 //
 // -- This is a child command --
@@ -23,10 +49,3 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-
-Cypress.Commands.add("login", (login, password) => {
-  cy.contains("Log in").click();
-  cy.get("#mail").type(login);
-  cy.get("#pass").type(password);
-  cy.contains("Submit").click();
-});

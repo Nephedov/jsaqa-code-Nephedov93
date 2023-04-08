@@ -1,14 +1,21 @@
 {
-  "name": "cypress-test",
+  "name": "7.6",
   "version": "1.0.0",
-  "description": "first tests with Cypress",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cypress-Chrome-Laptop-Headed": "cypress run --browser chrome --headed --config-file laptopView.config.js",
+    "cypress-Chrome-Laptop-Headless": "cypress run --browser chrome --config-file laptopView.config.js",
+    "cypress-Chrome-Mobile-Headed": "cypress run --browser chrome --headed --config-file mobileView.config.js",
+    "cypress-Chrome-Mobile-Headless": "cypress run --browser chrome --config-file mobileView.config.js",
+    "cypress-Edge-Laptop-Headed": "cypress run --browser edge --headed --config-file laptopView.config.js",
+    "cypress-Edge-Laptop-Headless": "cypress run --browser edge --config-file laptopView.config.js",
+    "cypress-Edge-Mobile-Headed": "cypress run --browser edge --headed --config-file mobileView.config.js",
+    "cypress-Edge-Mobile-Headless": "cypress run --browser edge --config-file mobileView.config.js"
   },
-  "author": "OM",
+  "author": "Nephedov93",
   "license": "ISC",
-  "dependencies": {
-    "cypress": "^8.3.0"
+  "devDependencies": {
+    "cypress": "^12.9.0"
   }
 }
