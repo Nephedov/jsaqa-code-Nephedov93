@@ -1,0 +1,8 @@
+[
+  {
+    "name": "should book a ticket to an available hall with feature data",
+    "day": 7,
+    "row": 10,
+    "seat": 10
+  }
+]

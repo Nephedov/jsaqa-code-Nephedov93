@@ -1,14 +1,14 @@
 {
-  "name": "jsaqa-live-7",
+  "name": "cypress2",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress run"
   },
-  "author": "",
+  "author": "Nephedov93",
   "license": "ISC",
-  "dependencies": {
-    "cypress": "^9.0.0"
+  "devDependencies": {
+    "cypress": "^12.9.0"
   }
 }

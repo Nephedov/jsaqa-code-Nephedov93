@@ -1,0 +1,14 @@
+{
+  "email": "input[type=email]",
+  "password": "input[type=password",
+  "loginButton": ".login__button",
+  "configurations": ".conf-steps",
+  "adminPathUrl": "./admin",
+  "header": "h1",
+  "listDays": ".page-nav__day",
+  "availableFilms": ".conf-step__seances-movie",
+  "availableSeances": ".movie-seances__time:not(.acceptin-button-disabled)",
+  "freeSeat": ".buying-scheme__chair:not(.buying-scheme__chair_taken, .buying-scheme__chair_selected)",
+  "qrCode": ".ticket__info-qr[src='i/QR_code.png']",
+  "headerHall": "h3"
+}
