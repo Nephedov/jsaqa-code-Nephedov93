@@ -4,11 +4,29 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run"
+    "test:auth": "cypress run --group auth --spec \"**/cypress/e2e/authorization.cy.js\" --record",
+    "test:booking": "cypress run --group book --spec \"**/cypress/e2e/booking.cy.js\" --record",
+    "test:parallel": "run-p --continue-on-error test:auth test:booking",
+
+    "test:edge": "cypress run --group edge --spec \"**/cypress/e2e/*.cy.js\" --browser edge --record",
+    "test:chrome": "cypress run --group chrome --spec \"**/cypress/e2e/*.cy.js\" --browser chrome --record",
+    "test:electron": "cypress run --group electron --spec \"**/cypress/e2e/*.cy.js\" --browser electron --record",
+    "test:parallel:edge:chrome": "run-p --continue-on-error test:edge test:chrome",
+    "test:parallel:edge:electron": "run-p --continue-on-error test:edge test:electron",
+    "test:parallel:chrome:edge": "run-p --continue-on-error test:chrome test:edge",
+    "test:parallel:chrome:electron": "run-p --continue-on-error test:chrome test:electron",
+    "test:parallel:electron:edge": "run-p --continue-on-error test:electron test:edge",
+    "test:parallel:electron:chrome": "run-p --continue-on-error test:electron test:chrome",
+
+    "test:dir_1": "cypress run --group dir_1 --spec \"**/cypress/e2e/dir_1/*.cy.js\" --record",
+    "test:dir_2": "cypress run --group dir_2 --spec \"**/cypress/e2e/dir_2/*.cy.js\" --record",
+    "test:parallel:dir": "run-p --continue-on-error test:dir_1 test:dir_2"
+
   },
   "author": "Nephedov93",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^12.9.0"
+    "cypress": "^12.9.0",
+    "npm-run-all": "^4.1.5"
   }
 }
